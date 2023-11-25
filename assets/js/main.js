@@ -4,6 +4,8 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
 (function() {
   "use strict";
 
@@ -34,7 +36,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -189,7 +191,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -252,5 +254,15 @@
       mirror: false
     })
   });
+
+  /**
+  * My additions
+  */
+  // Auto update date in index.html for Bio, specifically FTC
+  // document.addEventListener('DOMContentLoaded', function() {
+  //   var lastUpdated = document.getElementById('last-updated');
+  //   var currentDate = new Date().toLocaleString();
+  //   lastUpdated.textContent = 'Last Updated: ' + currentDate;
+  //   });
 
 })()
