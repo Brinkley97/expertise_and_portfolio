@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero-text {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.pathways {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.path-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 24px;
+  padding: 32px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.path-card:hover {
+  transform: translateY(-6px);
+  border-color: #38bdf8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.path-label {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 14px;
+}
+
+.path-card h2 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.path-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #f8fafc;
+}
+
+.footer-note {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .pathways {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-page {
+    padding: 36px 20px;
+  }
+
+  .path-card {
+    padding: 24px;
+  }
+}
