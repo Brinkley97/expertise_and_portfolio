@@ -1,0 +1,46 @@
+/* EXTRACTED STYLES FOR RESEARCH PAGE */
+
+@font-face {
+  font-family: "ProximaVara-Roman";
+  src: url(chrome-extension://cipccbpjpemcnijhjcdjmkjhmhniiick/static/fonts/proxima-vara-roman-black.f99ab2034eea98d11ef4.woff2) format("woff2"),
+       url(chrome-extension://cipccbpjpemcnijhjcdjmkjhmhniiick/static/fonts/proxima-vara-roman-black.fe9b55be9cb49a68107a.woff) format("woff");
+  font-weight: 100 1000;
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scispace-plugin-maximized {
+  width: calc(100% - 420px) !important;
+}
+
+@media print {
+  #scispace-extension-root {
+    visibility: hidden;
+  }
+  .scispace-plugin-maximized {
+    width: initial !important;
+  }
+}
+
+/* 
+  Note: Removed the massive inline KaTeX font block from your original HTML 
+  as you do not currently render math formulas on this page. If you ever add 
+  complex math formulas via KaTeX, you can re-include the KaTeX CDN in your HTML. 
+*/
+
+/* Custom tweaks to layout for FitTo integration */
+body {
+  font-family: Georgia, serif;
+  font-size: 16px;
+}
+
+h1 { font-size: 26.4px; }
+h2 { font-size: 20px; }
+
+#footer {
+  font-size: 13px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
