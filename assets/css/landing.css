@@ -4,6 +4,38 @@
   padding: 0;
 }
 
+/* HEADER */
+
+.landing-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* Aligns left. Use 'flex-end' for right, or 'center' for middle */
+  margin-bottom: 24px;
+}
+
+.landing-profile-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.landing-profile-img:hover {
+  transform: scale(1.05);
+  border-color: #38bdf8;
+}
+
+/* On mobile, it often looks better centered above the text */
+@media (max-width: 768px) {
+  .landing-header {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
@@ -102,6 +134,7 @@ a {
   text-align: center;
 }
 
+/* FOOTER */
 .footer-links {
   display: flex;
   flex-wrap: wrap;
@@ -135,5 +168,92 @@ a {
 
   .path-card {
     padding: 24px;
+  }
+}
+
+.logo-carousel-container {
+  margin: 20px auto 30px; /* Reduced top margin so it sits nicely below cards */
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 32px;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.logo-eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 32px;
+}
+
+.logo-marquee {
+  position: relative;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  /* Optional gradient masks on the left and right edges to fade logos out smoothly */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Large gap between logos */
+  padding-right: 80px; /* Matches gap for seamless loop */
+  animation: scroll-left 30s linear infinite;
+  /* Ensure the track spans wide enough to hold all items */
+  width: max-content; 
+}
+
+/* Pause the animation if a user hovers over a logo */
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+.logo-track a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
+  /* Define a fixed width to keep the 3-at-a-time feel consistent */
+  width: 200px; 
+}
+
+.logo-track a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.logo-track img {
+  height: 80px; /* Big logos */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* The continuous scrolling animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translates exactly half the width of the duplicated track */
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 40px;
+    padding-right: 40px;
+  }
+  .logo-track a {
+    width: 140px;
+  }
+  .logo-track img {
+    height: 55px;
   }
 }
