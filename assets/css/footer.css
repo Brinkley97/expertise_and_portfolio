@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------
+# Shared Footer ("Overly Thankful For" logo marquee)
+# Link this file from EVERY page's <head>:
+#   <link rel="stylesheet" href="/assets/css/footer.css">
+# so the marquee looks/behaves identically regardless of which
+# template (detravious.css, landing.css, research.css,
+# creative.css, fitto.css) the page otherwise uses.
+#
+# On pages that ALSO load detravious.css, this file must be
+# linked AFTER detravious.css in <head>, since detravious.css
+# defines its own conflicting #footer (fixed, 300px sidebar
+# style) that this file resets.
+--------------------------------------------------------------*/
+#footer {
+  position: static;
+  width: 100%;
+  padding: 20px 0 10px 0;
+  background: #040b14;
+}
+#footer .credits {
+  font-size: 13px;
+  color: #a8a9b4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo-marquee {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: logo-scroll 30s linear infinite;
+}
+.logo-track:hover {
+  animation-play-state: paused;
+}
+.logo-track a {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+.logo-track img {
+  height: 32px;
+  width: auto;
+  filter: grayscale(100%) brightness(1.6);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.logo-track img:hover {
+  filter: none;
+  opacity: 1;
+}
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (max-width: 1199px) {
+  .logo-track img {
+    height: 24px;
+  }
+}
