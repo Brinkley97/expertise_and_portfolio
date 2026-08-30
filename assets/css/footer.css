@@ -15,7 +15,7 @@
   position: static;
   width: 100%;
   padding: 20px 0 10px 0;
-  background: #040b14;
+  background: #a8a9b4;
 }
 #footer .credits {
   font-size: 13px;
@@ -35,7 +35,7 @@
 .logo-track {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 100px;
   width: max-content;
   animation: logo-scroll 30s linear infinite;
 }
@@ -48,8 +48,10 @@
   align-items: center;
 }
 .logo-track img {
-  height: 32px;
+  height: 100px;
   width: auto;
+  max-width: 320px;
+  object-fit: contain;
   filter: grayscale(100%) brightness(1.6);
   opacity: 0.8;
   transition: 0.3s;
@@ -64,6 +66,6 @@
 }
 @media (max-width: 1199px) {
   .logo-track img {
-    height: 24px;
+    height: 60px;
   }
 }

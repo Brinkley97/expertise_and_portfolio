@@ -97,7 +97,7 @@ a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -152,4 +152,18 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+.brand-logo {
+  height: 140px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.hub-card-logo {
+  height: 300px;
+  width: auto;
+  vertical-align: middle;
+  display: block;
+  margin: 0 auto 12px;
 }
