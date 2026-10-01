@@ -24,31 +24,63 @@
             color: var(--ink);
             line-height: 1.5;
         }
-        header {
+
+        /* Site nav */
+        .site-header {
+            background: var(--maroon-deep);
+            color: var(--cream);
+        }
+        .site-header .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .site-header .brand { display: flex; align-items: center; }
+        .site-header .brand-logo {
+            height: 44px;
+            width: auto;
+            display: block;
+            border-radius: 6px;
+        }
+        .site-nav { display: flex; gap: 1.25rem; }
+        .site-nav a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .site-nav a:hover { color: var(--orange); }
+
+        /* Hero */
+        .hero {
             background: var(--maroon);
             color: var(--cream);
             text-align: center;
             padding: 4rem 1.5rem 3.5rem;
             border-bottom: 8px solid var(--orange);
         }
-        header h1 {
+        .hero h1 {
             margin: 0;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 800;
             letter-spacing: -0.02em;
         }
-        header h1 .perform { color: var(--orange); }
-        header p {
+        .hero h1 .perform { color: var(--orange); }
+        .hero p {
             margin: 0.75rem 0 0;
             font-size: 1.1rem;
             opacity: 0.9;
         }
+
         main {
             max-width: 860px;
             margin: 0 auto;
             padding: 3rem 1.5rem 4rem;
         }
-        .clip { margin-bottom: 3.5rem; }
+        .clip { margin-bottom: 3.5rem; text-align: center; }
         .clip h2 {
             margin: 0 0 0.25rem;
             font-size: 1.6rem;
@@ -56,9 +88,13 @@
             color: var(--maroon);
         }
         .clip .when {
-            margin: 0 0 1rem;
+            margin: 0 0 0.5rem;
             font-weight: 600;
             color: var(--orange);
+        }
+        .clip .credit {
+            margin: 0 auto 1rem;
+            max-width: 62ch;
         }
         .clip video {
             display: block;
@@ -70,47 +106,80 @@
             border: 3px solid var(--maroon);
             box-shadow: 8px 8px 0 var(--orange);
         }
+
         footer {
             background: var(--maroon-deep);
             color: var(--cream);
-            text-align: center;
             padding: 1.5rem;
-            font-size: 0.9rem;
         }
+        footer .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        footer .school-logo {
+            height: 52px;
+            width: auto;
+            display: block;
+            background: var(--cream);
+            padding: 6px 10px;
+            border-radius: 8px;
+        }
+        footer p { margin: 0; font-size: 0.9rem; }
+        footer .school-link { display: block; line-height: 0; }
+
         :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>FitTo<span class="perform">Perform</span></h1>
-        <p>Two performances, front and center.</p>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="/">
+                <img src="../assets/img/fitTo-main.jpeg" alt="FitTo" class="brand-logo">
+            </a>
+            <nav class="site-nav">
+                <a href="/">Detravious J.B. | FitTo</a>
+            </nav>
+        </div>
     </header>
 
+    <div class="hero">
+        <h1>FitTo<span class="perform">Perform</span></h1>
+        <p>Two performances from Claflin University.</p>
+    </div>
+
     <main>
-        <!-- Clip 1: I Didn't Know -->
+        <!-- Clip 1: School play -->
         <section class="clip">
             <h2>I Didn't Know</h2>
-            <p class="when">Fall 2019 - Spring 2020</p>
+            <p class="when">Fall 2019</p>
+            <p class="credit">A school play directed by Annette Grevious, Associate Professor of Speech &amp; Drama and Theatre Program Coordinator.</p>
             <video controls preload="metadata" playsinline>
-                <!-- Browser tries the .mp4 first (if you add one), then falls back to the .MOV -->
                 <source src="../assets/mov/play-iDidntKnow.mp4" type="video/mp4">
-                <source src="../assets/mov/play-iDidntKnow.MOV" type="video/quicktime">
                 Your browser can't play this video.
             </video>
         </section>
 
-        <!-- Clip 2: Momma on the Couch -->
+        <!-- Clip 2: Intro to Theatre -->
         <section class="clip">
             <h2>Momma on the Couch</h2>
-            <p class="when">Fall 2019 - Spring 2020</p>
+            <p class="when">Fall 2019</p>
+            <p class="credit">Intro to Theatre (THEA-211) class by Annette Grevious, Associate Professor of Speech &amp; Drama and Theatre Program Coordinator.</p>
             <video controls preload="metadata" playsinline>
                 <source src="../assets/mov/play-mommaOnTheCounch.mp4" type="video/mp4">
-                <source src="../assets/mov/play-mommaOnTheCounch.MOV" type="video/quicktime">
                 Your browser can't play this video.
             </video>
         </section>
     </main>
 
-    <footer>FitToPerform</footer>
+    <footer>
+        <div class="container">
+            <a href="https://claflin.edu/" target="_blank" rel="noopener" class="school-link"><img src="../assets/img/cu.svg" alt="Claflin University" class="school-logo"></a>
+            <p>Claflin University</p>
+        </div>
+    </footer>
 </body>
 </html>
