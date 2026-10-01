@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>FitToPerform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --maroon: #6b1d3a;
+            --maroon-deep: #4a1228;
+            --orange: #f58220;
+            --cream: #fff6ec;
+            --ink: #2a0f1a;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; }
+        body {
+            font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.5;
+        }
+        header {
+            background: var(--maroon);
+            color: var(--cream);
+            text-align: center;
+            padding: 4rem 1.5rem 3.5rem;
+            border-bottom: 8px solid var(--orange);
+        }
+        header h1 {
+            margin: 0;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        header h1 .perform { color: var(--orange); }
+        header p {
+            margin: 0.75rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+        .clip { margin-bottom: 3.5rem; }
+        .clip h2 {
+            margin: 0 0 0.25rem;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--maroon);
+        }
+        .clip .when {
+            margin: 0 0 1rem;
+            font-weight: 600;
+            color: var(--orange);
+        }
+        .clip video {
+            display: block;
+            width: 100%;
+            min-height: 220px;
+            height: auto;
+            background: var(--maroon-deep);
+            border-radius: 12px;
+            border: 3px solid var(--maroon);
+            box-shadow: 8px 8px 0 var(--orange);
+        }
+        footer {
+            background: var(--maroon-deep);
+            color: var(--cream);
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+        :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FitTo<span class="perform">Perform</span></h1>
+        <p>Two performances, front and center.</p>
+    </header>
+
+    <main>
+        <!-- Clip 1: I Didn't Know -->
+        <section class="clip">
+            <h2>I Didn't Know</h2>
+            <p class="when">Fall 2019 - Spring 2020</p>
+            <video controls preload="metadata" playsinline>
+                <!-- Browser tries the .mp4 first (if you add one), then falls back to the .MOV -->
+                <source src="../assets/mov/play-iDidntKnow.mp4" type="video/mp4">
+                <source src="../assets/mov/play-iDidntKnow.MOV" type="video/quicktime">
+                Your browser can't play this video.
+            </video>
+        </section>
+
+        <!-- Clip 2: Momma on the Couch -->
+        <section class="clip">
+            <h2>Momma on the Couch</h2>
+            <p class="when">Fall 2019 - Spring 2020</p>
+            <video controls preload="metadata" playsinline>
+                <source src="../assets/mov/play-mommaOnTheCounch.mp4" type="video/mp4">
+                <source src="../assets/mov/play-mommaOnTheCounch.MOV" type="video/quicktime">
+                Your browser can't play this video.
+            </video>
+        </section>
+    </main>
+
+    <footer>FitToPerform</footer>
+</body>
+</html>
