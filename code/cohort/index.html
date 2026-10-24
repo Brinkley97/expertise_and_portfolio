@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Cohort</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #f4f7fb;
+            --surface: #ffffff;
+            --navy: #101d36;
+            --navy-light: #1c3154;
+            --teal: #20c6b5;
+            --teal-dark: #087f79;
+            --text: #18243b;
+            --muted: #66738a;
+            --border: #dfe7f1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Plus Jakarta Sans", system-ui, -apple-system,
+                "Segoe UI", sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* Navigation */
+        .site-header {
+            background: var(--navy);
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .site-header .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            background: var(--teal);
+            color: var(--navy);
+            border-radius: 11px;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .site-nav a {
+            color: #d8e2f2;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .site-nav a:hover {
+            color: var(--teal);
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: #ffffff;
+            padding: 5rem 1.5rem 4.5rem;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(32, 198, 181, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(135deg, var(--navy), var(--navy-light));
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border: 1px solid rgba(32, 198, 181, 0.2);
+            border-radius: 50%;
+            right: -100px;
+            bottom: -170px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.8rem;
+            border: 1px solid rgba(32, 198, 181, 0.35);
+            border-radius: 999px;
+            color: #8df0e5;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(3rem, 9vw, 5.5rem);
+            font-weight: 800;
+            letter-spacing: -0.07em;
+            line-height: 1.05;
+        }
+
+        .hero h1 span {
+            color: var(--teal);
+        }
+
+        .hero p {
+            max-width: 570px;
+            margin: 1.25rem auto 0;
+            color: #c8d5e8;
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem 4.5rem;
+        }
+
+        .section-heading {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            color: var(--navy);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+        }
+
+        .section-heading p {
+            margin: 0.5rem 0 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Demo video card */
+        .demo-card {
+            padding: clamp(1rem, 3vw, 2rem);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 16px 45px rgba(16, 29, 54, 0.07);
+        }
+
+        .demo-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .demo-title {
+            margin: 0;
+            color: var(--navy);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+        }
+
+        .demo-description {
+            margin: 0.35rem 0 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .demo-badge {
+            flex-shrink: 0;
+            padding: 0.35rem 0.65rem;
+            color: var(--teal-dark);
+            background: #e3faf6;
+            border: 1px solid #c6f1e9;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .video-frame {
+            overflow: hidden;
+            background: #0b1426;
+            border: 1px solid #d4deeb;
+            border-radius: 14px;
+        }
+
+        .video-frame video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 75vh;
+            aspect-ratio: 16 / 9;
+            background: #0b1426;
+        }
+
+        .demo-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            margin: 1rem 0 0;
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .demo-note-mark {
+            flex-shrink: 0;
+            color: var(--teal-dark);
+            font-weight: 800;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: #aebdd2;
+            padding: 1.5rem;
+        }
+
+        footer .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            color: #ffffff;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .footer-credit {
+            color: #aebdd2;
+        }
+
+        .footer-credit span {
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 4px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .site-header .container {
+                padding: 0.8rem 1rem;
+            }
+
+            .brand {
+                font-size: 1.05rem;
+            }
+
+            .brand-mark {
+                width: 32px;
+                height: 32px;
+            }
+
+            .site-nav a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem 3.5rem;
+            }
+
+            main {
+                padding: 2.5rem 1rem 3rem;
+            }
+
+            .demo-card {
+                border-radius: 16px;
+            }
+
+            .demo-header {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            footer .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="brand" href="/" aria-label="FitTo home">
+                <span class="brand-mark" aria-hidden="true">C</span>
+                <span>Cohort</span>
+            </a>
+            <nav class="site-nav">
+                <a href="/">Detravious J.B. | FitTo ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Product Demo
+            </div>
+
+            <h1>Cohort<span>.</span></h1>
+
+            <p>
+                A closer look at the Cohort experience.
+                Watch the demo below.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="section-heading">
+            <h2>Cohort Main Page</h2>
+            <p>
+                A platform for interns to connect with other interns
+                (like LinkedIn) and find housing (like Airbnb or Zillow).
+            </p>
+        </section>
+
+        <section class="demo-card" aria-labelledby="demo-title">
+            <div class="demo-header">
+                <h3 class="demo-title" id="demo-title">Cohort Demo</h3>
+                <span class="demo-badge">DEMO</span>
+            </div>
+
+            <div class="video-frame">
+                <video controls preload="metadata" playsinline>
+                    <source
+                        src="../../assets/mov/dev-cohort-demo-v1.mp4"
+                        type="video/mp4">
+                    Your browser can't play this video.
+                </video>
+            </div>
+
+            <p class="demo-note">
+                <span class="demo-note-mark" aria-hidden="true">i</span>
+                <span>
+                    For preview purposes only. Do not share without the
+                    consent of Detravious J. B.
+                </span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">Cohort</div>
+            <p class="footer-credit">Created by <span>FitTo</span></p>
+        </div>
+    </footer>
+</body>
+</html>
